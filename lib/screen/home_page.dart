@@ -44,23 +44,95 @@ class HomePage extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.all(20.0),
-                child: const Column(
+                child:  Column(
                   children: [
-                    Row(
+                    const Row(
                       children: [
                         CircleAvatar(
                           child: Icon(Icons.account_circle_rounded),
                         ),
                         SizedBox(width: 15.0),
-                        Text(
-                            "bidur_05",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18
-                          ),
-                        )
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "bidur_05",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16
+                              ),
+                            ),
+                            Text(
+                              "Shimla",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 12
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
-                    )
+                    ),
+                    const SizedBox(height: 10.0),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 40.0),
+                          child: Text(
+                            "View of Himalaya",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 15
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10.0),
+                    Container(
+                      color: Colors.blue,
+                      height: 210,
+                    ),
+                    const SizedBox(height: 10.0),
+                    Row(
+                      children: [
+                        IconButton(
+                            onPressed: (){}
+                            , icon: Icon(Icons.preview_sharp)
+                        ),
+                        Text(
+                          "2000",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15
+                          ),
+                        ),
+                        const SizedBox(width: 20.0,),
+                        Text(
+                          "#Entertainment",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 18.0),
+                          child: Text(
+                            "2 days ago",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 15
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
