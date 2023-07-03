@@ -91,8 +91,10 @@ class HomePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 10.0),
                     Container(
-                      color: Colors.blue,
                       height: 210,
+                      child: Image(
+                          image: NetworkImage("https://wallpapercave.com/wp/wp2752213.jpg"),
+                      ),
                     ),
                     const SizedBox(height: 10.0),
                     Row(
@@ -110,7 +112,7 @@ class HomePage extends StatelessWidget {
                         ),
                         const SizedBox(width: 20.0,),
                         Text(
-                          "#Entertainment",
+                          "#Adventure",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 15

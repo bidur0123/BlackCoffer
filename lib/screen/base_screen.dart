@@ -34,6 +34,7 @@ class _BaseScreenState extends State<BaseScreen> {
           ),
         ),
         centerTitle: true,
+        iconTheme: IconThemeData(color: Colors.white),
         actions: [
           IconButton(
             icon: const Icon(
