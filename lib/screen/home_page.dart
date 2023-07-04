@@ -29,18 +29,6 @@ class HomePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                // const Text(
-                //   'Welcome to Flutter!',
-                //   style: TextStyle(fontSize: 24, color: Colors.white),
-                // ),
-                // SizedBox(height: 16),
-                // ElevatedButton(
-                //     style: style,
-                //     onPressed: _userHome,
-                //     child: const Text(
-                //       'TEST AGAIN',
-                //       style: TextStyle(fontSize: 14, color: Colors.white),
-                //     )),
                 const SizedBox(
                   height: 10.0,
                 ),
