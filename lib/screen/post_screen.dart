@@ -21,19 +21,6 @@ class _PostScreenState extends State<PostScreen> {
         ),
         centerTitle: true,
         iconTheme: IconThemeData(color: Colors.white),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-            iconSize: 28,
-            tooltip: 'Search',
-            onPressed: () {
-
-            },
-          ),
-        ],
       ),
     );
   }
