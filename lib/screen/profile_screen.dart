@@ -11,17 +11,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xff133D59),
-        title: Text(
-          "BLACKCOFFER",
-          style: TextStyle(
-              color: Colors.white
-          ),
-        ),
-        centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.white),
-      ),
+
     );
   }
 }

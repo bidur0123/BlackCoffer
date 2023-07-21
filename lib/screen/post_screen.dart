@@ -11,16 +11,26 @@ class _PostScreenState extends State<PostScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xff133D59),
-        title: Text(
-          "BLACKCOFFER",
-          style: TextStyle(
-              color: Colors.white
+      body: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.all(25.0),
+            height: 250,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.grey.shade400,
+              borderRadius: BorderRadius.circular(10.0),
+              border: Border.all(
+                color: Colors.black,
+                width: 2.0,
+              ),
+            ),
+            child: Icon(
+                Icons.add_a_photo,
+              color: Colors.blueAccent.shade700,
+            ),
           ),
-        ),
-        centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.white),
+        ],
       ),
     );
   }

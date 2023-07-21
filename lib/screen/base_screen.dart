@@ -18,8 +18,8 @@ class _BaseScreenState extends State<BaseScreen> {
 
   static  final List<Widget> _widgetOptions = <Widget>[
       HomePage(),
-      PostScreen(),
       AddPostScreen(),
+      PostScreen(),
       ProfileScreen(),
   ];
   @override
