@@ -1,3 +1,4 @@
+import 'package:blackcoffer/components/round_button.dart';
 import 'package:flutter/material.dart';
 
 class AddPostScreen extends StatefulWidget {
@@ -85,7 +86,12 @@ class _AddPostScreenState extends State<AddPostScreen> {
               const SizedBox(
                 height: 30,
               ),
+              RoundButton(
+                  title: "UPlOAD",
+                  onPress: (){
 
+                  }
+              ),
             ],
           ),
         ),
