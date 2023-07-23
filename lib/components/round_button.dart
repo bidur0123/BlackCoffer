@@ -20,7 +20,8 @@ class RoundButton extends StatelessWidget {
         minWidth: double.infinity,
         onPressed: onPress,
         child: Text
-          (title,
+          (
+          title,
           style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
