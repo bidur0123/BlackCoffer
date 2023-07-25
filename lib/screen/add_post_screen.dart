@@ -223,7 +223,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                         int date = DateTime.now().millisecondsSinceEpoch;
                         firebase_storage.Reference ref = firebase_storage
                             .FirebaseStorage.instance
-                            .ref(("/Blogify$date"));
+                            .ref(("/BlackCoffer$date"));
                         UploadTask uploadTask = ref.putFile(_image!.absolute);
                         await Future.value(uploadTask);
                         var newUrl = await ref.getDownloadURL();
