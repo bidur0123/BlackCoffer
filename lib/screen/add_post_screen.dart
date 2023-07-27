@@ -67,7 +67,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                 children: [
                   InkWell(
                     onTap: () {
-                    //  getCameraImage();
+                      getCameraImage();
                       Navigator.pop(context);
                     },
                     child: ListTile(
