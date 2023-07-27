@@ -89,7 +89,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                    //  getImageGallery();
+                      getImageGallery();
                       Navigator.pop(context);
                     },
                     child: ListTile(
@@ -227,7 +227,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                         UploadTask uploadTask = ref.putFile(_image!.absolute);
                         await Future.value(uploadTask);
                         var newUrl = await ref.getDownloadURL();
-                        final User? user = _auth.currentUser;
+                        final User ? user = _auth.currentUser;
                         postRef.child("Post List").child(date.toString()).set({
                           'pId': date.toString(),
                           'pImage': newUrl.toString(),
