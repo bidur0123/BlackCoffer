@@ -12,14 +12,14 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-class AddPostScreen extends StatefulWidget {
-  const AddPostScreen({Key? key}) : super(key: key);
+class UploadVideoScreen extends StatefulWidget {
+  const UploadVideoScreen({Key? key}) : super(key: key);
 
   @override
-  State<AddPostScreen> createState() => _AddPostScreenState();
+  State<UploadVideoScreen> createState() => _UploadVideoScreenState();
 }
 
-class _AddPostScreenState extends State<AddPostScreen> {
+class _UploadVideoScreenState extends State<UploadVideoScreen> {
 
   bool showSpinner = false;
   final postRef = FirebaseDatabase.instance.reference().child('Posts');
@@ -60,10 +60,10 @@ class _AddPostScreenState extends State<AddPostScreen> {
     if(videoFile !=null){
       // video upload form
       Get.to(
-        UploadForm(
-          videoFile : File(videoFile.path),
-          videoPath : videoFile.path,
-        )
+          UploadForm(
+            videoFile : File(videoFile.path),
+            videoPath : videoFile.path,
+          )
       );
     }
   }
@@ -84,7 +84,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                 children: [
                   InkWell(
                     onTap: () {
-                      getCameraImage();
+                      getVideoFile(ImageSource.camera);
                       Navigator.pop(context);
                     },
                     child: ListTile(
@@ -106,7 +106,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      getImageGallery();
+                      getVideoFile(ImageSource.gallery);
                       Navigator.pop(context);
                     },
                     child: ListTile(
@@ -183,49 +183,49 @@ class _AddPostScreenState extends State<AddPostScreen> {
                   height: 20.0,
                 ),
                 Form(
-                    child: Column(
-                      children: [
-                        TextFormField(
-                          controller: titleController,
-                          keyboardType: TextInputType.text,
-                          decoration: const InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                              borderSide:
-                              BorderSide(width: 2, color: Colors.black87),
-                            ),
-                            labelText: "Title",
-                            hintText: "Enter Title",
-                            border: OutlineInputBorder(),
-                            hintStyle: TextStyle(
-                                color: Colors.grey, fontWeight: FontWeight.normal),
-                            labelStyle: TextStyle(
-                                color: Colors.grey, fontWeight: FontWeight.normal),
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        controller: titleController,
+                        keyboardType: TextInputType.text,
+                        decoration: const InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                            BorderSide(width: 2, color: Colors.black87),
                           ),
+                          labelText: "Title",
+                          hintText: "Enter Title",
+                          border: OutlineInputBorder(),
+                          hintStyle: TextStyle(
+                              color: Colors.grey, fontWeight: FontWeight.normal),
+                          labelStyle: TextStyle(
+                              color: Colors.grey, fontWeight: FontWeight.normal),
                         ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        TextFormField(
-                          controller: descriptionController,
-                          keyboardType: TextInputType.text,
-                          minLines: 1,
-                          maxLength: 250,
-                          decoration: const InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                              borderSide:
-                              BorderSide(width: 2, color: Colors.black87),
-                            ),
-                            labelText: "Description",
-                            hintText: "Enter Description",
-                            border: OutlineInputBorder(),
-                            hintStyle: TextStyle(
-                                color: Colors.grey, fontWeight: FontWeight.normal),
-                            labelStyle: TextStyle(
-                                color: Colors.grey, fontWeight: FontWeight.normal),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      TextFormField(
+                        controller: descriptionController,
+                        keyboardType: TextInputType.text,
+                        minLines: 1,
+                        maxLength: 250,
+                        decoration: const InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                            BorderSide(width: 2, color: Colors.black87),
                           ),
+                          labelText: "Description",
+                          hintText: "Enter Description",
+                          border: OutlineInputBorder(),
+                          hintStyle: TextStyle(
+                              color: Colors.grey, fontWeight: FontWeight.normal),
+                          labelStyle: TextStyle(
+                              color: Colors.grey, fontWeight: FontWeight.normal),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(
                   height: 30,

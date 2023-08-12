@@ -194,14 +194,14 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     suffixIcon: phoneController.text.length > 9
                         ? Container(
-                      height: 30,
-                      width: 30,
-                      margin: const EdgeInsets.all(10.0),
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.green,
-                      ),
-                      child: const Icon(
+                          height: 30,
+                          width: 30,
+                          margin: const EdgeInsets.all(10.0),
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.green,
+                          ),
+                         child: const Icon(
                         Icons.done,
                         color: Colors.white,
                         size: 20,

@@ -1,5 +1,6 @@
 import 'package:blackcoffer/login_screen.dart';
 import 'package:blackcoffer/screen/base_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -39,7 +40,17 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(), // standard dark theme
       themeMode: ThemeMode.system,
       // theme: ThemeData.dark(),
-      home: BaseScreen(),
+      home: StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context,snapshot){
+          if(snapshot.hasData){
+            return BaseScreen();
+          }
+          else{
+            return LoginPage();
+          }
+        },
+      ),
     );
   }
 }
