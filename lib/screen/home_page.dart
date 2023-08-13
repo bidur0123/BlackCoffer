@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   final dbRef = FirebaseDatabase.instance.ref().child('Posts');
   FirebaseAuth auth = FirebaseAuth.instance;
   TextEditingController searchController = TextEditingController();
@@ -80,7 +81,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(
                 child: FirebaseAnimatedList(
-                  query: dbRef.child("Post List"),
+                  query: dbRef.child("Post List").child("userInfo List"),
                   itemBuilder: (BuildContext context, DataSnapshot snapshot,
                       Animation<double> animation, int index) {
                     return Padding(
@@ -98,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Row(
+                               Row(
                                 children: [
                                   CircleAvatar(
                                     child: Icon(Icons.account_circle_rounded),
@@ -109,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "bidur_05",
+                                        snapshot.child('Users').child('pName').toString(),
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 16

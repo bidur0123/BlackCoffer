@@ -142,12 +142,12 @@ class _UploadFormState extends State<UploadForm> {
                                     showProgressBarAnimation = true;
                                   });
                                 }
-                                ),
+                            ),
                         ],
-              ),
+                 ),
                ),
-            ],
-          ),
+             ],
+           ),
         ),
       ),
     );

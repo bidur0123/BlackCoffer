@@ -179,7 +179,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
                 Form(
@@ -274,7 +274,8 @@ class _AddPostScreenState extends State<AddPostScreen> {
                         });
                         toastMessages(e.toString());
                       }
-                    })
+                    }
+                    )
               ],
             ),
           ),

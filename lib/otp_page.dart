@@ -1,4 +1,5 @@
 import 'package:blackcoffer/screen/base_screen.dart';
+import 'package:blackcoffer/screen/user_information_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:blackcoffer/screen/home_page.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,7 @@ class _OtpPageState extends State<OtpPage> {
           verificationId: verificationId, smsCode: userOtp);
       User? user = (await auth.signInWithCredential(creds)).user;
       if (user != null) {
-        Get.to(BaseScreen());
+        Get.to(UserInfromationScreen());
       }
     } on FirebaseAuthException catch (e) {
       Get.snackbar(
