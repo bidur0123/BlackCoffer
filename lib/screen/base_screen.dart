@@ -3,7 +3,6 @@ import 'package:blackcoffer/screen/VideoUpload/video_post.dart';
 import 'package:blackcoffer/screen/add_post_screen.dart';
 import 'package:blackcoffer/screen/drawer_screen.dart';
 import 'package:blackcoffer/screen/home_page.dart';
-import 'package:blackcoffer/screen/post_screen.dart';
 import 'package:blackcoffer/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:blackcoffer/constants/color_constants.dart';
