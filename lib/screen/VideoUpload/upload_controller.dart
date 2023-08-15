@@ -72,9 +72,9 @@ class UploadController extends GetxController
 
       // 3. Save overall video info to firestore database
       Video videoObject = Video(
-        userID: FirebaseAuth.instance.currentUser!.uid,
-        // userName: (userDocumentSnapshot.data() as Map<String , dynamic>["userName"]);
-        // userProfileImage: (userDocumentSnapshot.data() as Map<String , dynamic>["images"]);
+         userID: FirebaseAuth.instance.currentUser!.uid,
+         userName: (userDocumentSnapshot.data() as Map<String , dynamic>)["userName"],
+         userProfileImage: (userDocumentSnapshot.data() as Map<String , dynamic>)["images"],
         videoID: videoID,
         totalComments: 0,
         totalShares: 0,
@@ -89,9 +89,7 @@ class UploadController extends GetxController
       await FirebaseFirestore.instance.collection("videos").doc(videoID).set(videoObject.toJson());
 
       showProgressBarAnimation = false;
-      Get.to(
-          BaseScreen()
-      );
+      Get.to(BaseScreen());
 
       Get.snackbar("New Video", "you have successfully uploaded your video ");
 

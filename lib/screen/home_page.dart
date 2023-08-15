@@ -1,4 +1,4 @@
-import 'package:blackcoffer/login_screen.dart';
+import 'package:blackcoffer/login/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(
                 child: FirebaseAnimatedList(
-                  query: dbRef.child("Post List").child("userInfo List"),
+                  query: dbRef.child('Post List'),
                   itemBuilder: (BuildContext context, DataSnapshot snapshot,
                       Animation<double> animation, int index) {
                     return Padding(
@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                               Row(
+                              const Row(
                                 children: [
                                   CircleAvatar(
                                     child: Icon(Icons.account_circle_rounded),
@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        snapshot.child('Users').child('pName').toString(),
+                                        "bidur_05",
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 16
@@ -120,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                                         "NewDelhi",
                                         style: TextStyle(
                                             fontWeight: FontWeight.w500,
-                                            fontSize: 12
+                                            fontSize: 12,
                                         ),
                                       ),
                                     ],

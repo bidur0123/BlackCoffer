@@ -1,4 +1,4 @@
-import 'package:blackcoffer/login_screen.dart';
+import 'package:blackcoffer/login/login_screen.dart';
 import 'package:blackcoffer/screen/base_screen.dart';
 import 'package:blackcoffer/screen/user_information_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';

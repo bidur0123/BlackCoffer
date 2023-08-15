@@ -20,7 +20,7 @@ class UploadForm extends StatefulWidget {
 
 class _UploadFormState extends State<UploadForm> {
 
-  UploadController uploadController = Get.put(UploadController());
+  UploadController uploadVideoController = Get.put(UploadController());
   VideoPlayerController? playerController;
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
@@ -129,19 +129,20 @@ class _UploadFormState extends State<UploadForm> {
                              RoundButton(
                                 title: "UPLOAD",
                                 onPress: () {
-                                  if(titleController.text.isEmpty
-                                        && descriptionController.text.isEmpty)
+                                  if(titleController.text.isNotEmpty
+                                        && descriptionController.text.isNotEmpty)
                                     {
-                                      uploadController.saveVideoInformationToFirestoreDatabase(
+                                      uploadVideoController.saveVideoInformationToFirestoreDatabase(
                                           titleController.text,
-                                          descriptionController.text, widget.videoPath,
+                                          descriptionController.text,
+                                          widget.videoPath,
                                           context
                                       );
+                                      setState(() {
+                                        showProgressBarAnimation = true;
+                                      });
                                     }
-                                  setState(() {
-                                    showProgressBarAnimation = true;
-                                  });
-                                }
+                                 }
                             ),
                         ],
                  ),

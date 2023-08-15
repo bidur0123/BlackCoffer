@@ -1,18 +1,15 @@
 import 'dart:io';
 
 import 'package:blackcoffer/screen/base_screen.dart';
-import 'package:blackcoffer/screen/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
-import 'package:blackcoffer/provider/auth_provider.dart';
 import 'package:blackcoffer/utils/utils.dart';
 import 'package:blackcoffer/utils/custom_button.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:provider/provider.dart';
 
 class UserInfromationScreen extends StatefulWidget {
   const UserInfromationScreen({super.key});
@@ -23,10 +20,11 @@ class UserInfromationScreen extends StatefulWidget {
 
 class _UserInfromationScreenState extends State<UserInfromationScreen> {
 
-  final userRef = FirebaseDatabase.instance.reference().child('Users');
+  final userRef = FirebaseDatabase.instance.reference().child('UserInfo');
   firebase_storage.FirebaseStorage storage =
       firebase_storage.FirebaseStorage.instance;
   FirebaseAuth _auth = FirebaseAuth.instance;
+
   File? image;
   bool showSpinner = false;
   final nameController = TextEditingController();
@@ -144,17 +142,17 @@ class _UserInfromationScreenState extends State<UserInfromationScreen> {
                              .ref(("/BlackCoffer$date"));
                          UploadTask uploadTask = ref.putFile(image!.absolute);
                          await Future.value(uploadTask);
-                         var newwUrl = await ref.getDownloadURL();
-                         final User ? userr = _auth.currentUser;
-                         userRef.child("userInfo List").child(date.toString()).set({
+                         var newUrl = await ref.getDownloadURL();
+                         final User ? user = _auth.currentUser;
+                         userRef.child("UserInfo").child(date.toString()).set({
                            'pId': date.toString(),
-                           'pImage': newwUrl.toString(),
+                           'pProfileImage': newUrl.toString(),
                            'pTime': date.toString(),
-                           'pName': nameController.text.toString(),
-                           'pemail': emailController.text.toString(),
-                           'pbio': bioController.text.toString(),
-                           'uEmail': userr!.email.toString(),
-                           'uid': userr.uid.toString(),
+                           'pUserName': nameController.text.toString(),
+                           'pUseremail': emailController.text.toString(),
+                           'pUserbio': bioController.text.toString(),
+                           'uEmail': user!.email.toString(),
+                           'uid': user.uid.toString(),
                          }).then((value) {
                            toastMessages("Your account has been successfully Created ");
                            Navigator.push(
