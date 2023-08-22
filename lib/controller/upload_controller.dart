@@ -1,5 +1,5 @@
 import 'package:blackcoffer/global.dart';
-import 'package:blackcoffer/screen/VideoUpload/video_model.dart';
+import 'package:blackcoffer/model/video_model.dart';
 import 'package:blackcoffer/screen/base_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -72,9 +72,9 @@ class UploadController extends GetxController
 
       // 3. Save overall video info to firestore database
       Video videoObject = Video(
-         userID: FirebaseAuth.instance.currentUser!.uid,
-         userName: (userDocumentSnapshot.data() as Map<String , dynamic>)["userName"],
-         userProfileImage: (userDocumentSnapshot.data() as Map<String , dynamic>)["images"],
+        //  userID: FirebaseAuth.instance.currentUser!.uid,
+        //  userName: (userDocumentSnapshot.data() as Map<String , dynamic>)["userName"],
+        //  userProfileImage: (userDocumentSnapshot.data() as Map<String , dynamic>)["images"],
         videoID: videoID,
         totalComments: 0,
         totalShares: 0,
@@ -96,7 +96,7 @@ class UploadController extends GetxController
     }
     catch(errorMsg)
     {
-     Get.snackbar("Video upload Unsuccessfull", "your video is not uploaded . Try again later");
+     Get.snackbar("Unsuccessfull", "try again later ");
     }
   }
 }

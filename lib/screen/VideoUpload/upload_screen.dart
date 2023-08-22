@@ -1,8 +1,9 @@
 import 'dart:io';
 
-import 'package:blackcoffer/components/round_button.dart';
+import 'package:blackcoffer/utils/round_button.dart';
 import 'package:blackcoffer/global.dart';
-import 'package:blackcoffer/screen/VideoUpload/upload_controller.dart';
+import 'package:blackcoffer/controller/upload_controller.dart';
+import 'package:blackcoffer/screen/base_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
@@ -35,7 +36,7 @@ class _UploadFormState extends State<UploadForm> {
     playerController!.initialize();
     playerController!.play();
     playerController!.setVolume(2);
-    playerController!.setLooping(true);
+   // playerController!.setLooping(true);
   }
 
   @override

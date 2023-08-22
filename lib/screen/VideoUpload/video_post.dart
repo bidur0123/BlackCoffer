@@ -1,6 +1,6 @@
 import 'dart:io';
-import 'package:blackcoffer/components/round_button.dart';
-import 'package:blackcoffer/screen/VideoUpload/upload_form.dart';
+import 'package:blackcoffer/utils/round_button.dart';
+import 'package:blackcoffer/screen/VideoUpload/upload_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';

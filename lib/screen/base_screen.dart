@@ -3,7 +3,7 @@ import 'package:blackcoffer/screen/VideoUpload/video_post.dart';
 import 'package:blackcoffer/screen/add_post_screen.dart';
 import 'package:blackcoffer/screen/drawer_screen.dart';
 import 'package:blackcoffer/screen/home_page.dart';
-import 'package:blackcoffer/screen/profile_screen.dart';
+import 'package:blackcoffer/screen/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:blackcoffer/constants/color_constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -24,7 +24,8 @@ class _BaseScreenState extends State<BaseScreen> {
       HomePage(),
       AddPostScreen(),
       UploadVideoScreen(),
-      ProfileScreen(),
+       ProfileScreen(),
+     // VideoUploadScreen(),
   ];
 
   void _userHome() async {

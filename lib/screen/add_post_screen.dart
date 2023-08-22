@@ -1,6 +1,6 @@
 import 'dart:io';
-import 'package:blackcoffer/components/round_button.dart';
-import 'package:blackcoffer/screen/VideoUpload/upload_form.dart';
+import 'package:blackcoffer/utils/round_button.dart';
+import 'package:blackcoffer/screen/VideoUpload/upload_screen.dart';
 import 'package:blackcoffer/screen/base_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
