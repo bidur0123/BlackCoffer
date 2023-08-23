@@ -59,7 +59,7 @@ class _BaseScreenState extends State<BaseScreen> {
           ),
         ],
       ),
-      drawer: DrawerScreen(),
+      drawer: DrawerScreen(profilePic: '',),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),

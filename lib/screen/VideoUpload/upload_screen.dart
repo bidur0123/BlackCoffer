@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:blackcoffer/utils/round_button.dart';
 import 'package:blackcoffer/global.dart';
-import 'package:blackcoffer/controller/upload_controller.dart';
+import 'package:blackcoffer/controller/video_upload_controller.dart';
 import 'package:blackcoffer/screen/base_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

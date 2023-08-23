@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-
 class UploadVideoScreen extends StatefulWidget {
   const UploadVideoScreen({Key? key}) : super(key: key);
 
@@ -21,7 +20,7 @@ class _UploadVideoScreenState extends State<UploadVideoScreen> {
     final videoFile = await ImagePicker().pickVideo(source: sourceImg);
 
     if(videoFile !=null){
-      // video upload form
+      // video upload Screen
       Get.to(
           UploadForm(
             videoFile : File(videoFile.path),

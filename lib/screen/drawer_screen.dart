@@ -6,15 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DrawerScreen extends StatefulWidget {
-  const DrawerScreen({Key? key}) : super(key: key);
-
+   DrawerScreen({Key? key , required this.profilePic}) : super(key: key);
+  String profilePic;
   @override
   State<DrawerScreen> createState() => _DrawerScreenState();
 }
 
 class _DrawerScreenState extends State<DrawerScreen> {
-  final dbRef = FirebaseDatabase.instance.ref().child('Posts');
-  FirebaseAuth auth = FirebaseAuth.instance;
   void _userHome() async {
     Get.to(
         LoginPage());
@@ -25,7 +23,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
           child: ListView(
             padding: const EdgeInsets.all(0),
             children:  [
-              DrawerHeader (
+              const DrawerHeader (
                 padding: EdgeInsets.all(0.0),
                 child: UserAccountsDrawerHeader(
                   decoration: BoxDecoration(
@@ -60,23 +58,23 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   ),
                 ),
               ),
-              ListTile(
+              const ListTile(
                 leading: Icon(Icons.my_library_books_rounded),
                 title: Text(' FAQs'),
               ),
-              ListTile(
+              const ListTile(
                 leading: Icon(Icons.book),
                 title: Text(' About Us'),
               ),
-              ListTile(
+              const ListTile(
                 leading: Icon(Icons.contact_phone),
                 title: Text(' Contact Us '),
               ),
-              ListTile(
+              const ListTile(
                 leading: Icon(Icons.privacy_tip),
                 title: Text(' Privacy and Policy  '),
               ),
-              ListTile(
+              const ListTile(
                 leading: Icon(Icons.pin_end),
                 title: Text(' Terms and Condition  '),
               ),
@@ -84,12 +82,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 onTap: (){
                   _userHome();
                 },
-                child: ListTile(
+                child: const ListTile(
                   leading: Icon(Icons.logout),
                   title: Text(' Log Out  '),
                 ),
               ),
-              Expanded(
+              const Expanded(
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(45.0, 200.0, 40.0, 20.0),
                   child: Text (
