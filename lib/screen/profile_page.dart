@@ -23,6 +23,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         title: Text('Firestore Example'),
       ),
+      body: Column(
+        children: [
+
+        ],
+      ),
     );
   }
 }
