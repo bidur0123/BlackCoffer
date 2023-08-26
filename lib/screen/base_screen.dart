@@ -24,7 +24,7 @@ class _BaseScreenState extends State<BaseScreen> {
       HomePage(),
       AddPostScreen(),
       UploadVideoScreen(),
-       ProfileScreen(),
+      ProfileScreen(),
      // VideoUploadScreen(),
   ];
 
