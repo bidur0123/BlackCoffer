@@ -23,8 +23,6 @@ class _BaseScreenState extends State<BaseScreen> {
   static  final List<Widget> _widgetOptions = <Widget>[
       HomePage(),
       AddPostScreen(),
-      UploadVideoScreen(),
-      ProfileScreen(),
      // VideoUploadScreen(),
   ];
 
@@ -73,10 +71,6 @@ class _BaseScreenState extends State<BaseScreen> {
                 icon: Icon(FontAwesomeIcons.home),             label: "Home"),
             BottomNavigationBarItem(
                 icon: Icon(FontAwesomeIcons.upload),           label: "Upload"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.image),                       label: "VideoPost"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_rounded),      label: "Profile")
           ],
           currentIndex: _selectedIndex,
           onTap: (int index) {
